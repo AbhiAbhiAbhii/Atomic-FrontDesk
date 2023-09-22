@@ -267,7 +267,7 @@ select {
 @media(max-width: 780px) {
   .main {
     font-size: 2.5rem;
-    min-height: 140vh;
+    min-height: 100vh;
     padding: 0 0 2em 0;
   }
   .form-A-wrapper {
