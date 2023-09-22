@@ -156,6 +156,14 @@ export default function FrontDesk(){
    else  {
     formSuccess()
     console.log("SUCCESS")
+    await fetch("/api/sheet", {
+      method:'POST',
+      headers: {
+         Accept: 'application/json',
+        'Content-Type' : 'application/json'
+      },
+      body: JSON.stringify(data)
+     })
 
     setTimeout(() => {
       router.push('/thankyou')
@@ -179,14 +187,6 @@ export default function FrontDesk(){
     setInterview('')
    }
 
-  await fetch("/api/sheet", {
-    method:'POST',
-    headers: {
-       Accept: 'application/json',
-      'Content-Type' : 'application/json'
-    },
-    body: JSON.stringify(data)
-   })
 
 
   }
