@@ -1,8 +1,11 @@
 
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 
 export default function FrontDesk(){
+
+  const router = useRouter()
 
   const [ boolean, setBoolean ] = useState(false) // Boolean switch, Form A and Form B
 
@@ -144,6 +147,14 @@ export default function FrontDesk(){
     formSuccess()
     console.log("SUCCESS")
 
+    setTimeout(() => {
+      router.reload()
+    }, 7000)
+
+    setTimeout(() => {
+      window.alert("Your Form has been Submitted")
+    }, 3000)
+
     setFullName('')
     setNumber('')
     setMail('')
@@ -177,7 +188,7 @@ export default function FrontDesk(){
 
 
 
-    setTimeout(() => NotifyWrapper.classList.remove('active'), 3500)
+    setTimeout(() => NotifyWrapper.classList.remove('active'), 6500)
 
   }
 
@@ -192,7 +203,7 @@ export default function FrontDesk(){
 
 
 
-    setTimeout(() => NotifyWrapper.classList.remove('active'), 3500)
+    setTimeout(() => NotifyWrapper.classList.remove('active'), 6500)
   }
 
 
@@ -249,7 +260,7 @@ export default function FrontDesk(){
   return(
     <main className="main">
         <div className="main-text-holder"> 
-          <div className="main-logo">
+          <div onClick={() => window.location.href="/"} className="main-logo">
             <Image src={'/ATOMIC_logo.svg'} alt="THE ATOMIC" height={100} width={200} />
           </div>
           <div className="main-sub-text">
