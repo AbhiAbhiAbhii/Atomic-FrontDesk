@@ -26,6 +26,8 @@ export default function FrontDesk(){
   const [ meeting, setMeeting ] = useState('')
   const [ interview, setInterview ] = useState('')
 
+  const [ thanks, setThanks ] = useState(false)
+
 
   // Focus and Blur states
   const [ fullNameFocused, setFullNameFocused ] = useState(false)
@@ -148,12 +150,44 @@ export default function FrontDesk(){
     console.log("SUCCESS")
 
     setTimeout(() => {
-      router.reload()
-    }, 10000)
+      router.push('/thankyou')
+    }, 6000)
 
     setTimeout(() => {
       window.alert("Your Form has been Submitted")
     }, 3000)
+
+    setTimeout(() => {
+      setThanks(true)
+    }, 5000)
+
+    if(thanks === true) {
+      return(
+        <main className="main">
+        <div className="main-text-holder"> 
+          <div onClick={() => window.location.href="/"} className="main-logo">
+            <Image src={'/ATOMIC_logo.svg'} alt="THE ATOMIC" height={100} width={200} />
+          </div>
+          <div className="main-sub-text">
+            <p className="c-f">
+              {SubText}
+            </p>
+          </div>
+        </div>
+      
+        {/* Boolean */}
+          <div className="form-A-wrapper">
+            <form className="form-A">
+              <div className="form-A-title">
+                <p className="inter">
+                  {TitleA}
+                </p>
+              </div>
+            </form>
+         </div>
+        </main>
+      )
+    }
 
     console.log(data,"OUR DATA")
 
