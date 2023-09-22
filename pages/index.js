@@ -105,7 +105,7 @@ export default function FrontDesk(){
   }
 
   const handleMeetingBlur = () => {
-    setMeeting(false)
+    setMeetingFocused(false)
   }
 
 
@@ -116,7 +116,7 @@ export default function FrontDesk(){
   }
 
   const handleInterviewBlur = () => {
-    setInterview(false)
+    setInterviewFocused(false)
   }
 
   // Handle Submit
@@ -155,6 +155,8 @@ export default function FrontDesk(){
       window.alert("Your Form has been Submitted")
     }, 3000)
 
+    console.log(data,"OUR DATA")
+
     setFullName('')
     setNumber('')
     setMail('')
@@ -162,6 +164,8 @@ export default function FrontDesk(){
     setCompany('')
     setLocation('')
     setEvent('')
+    setMeeting('')
+    setInterview('')
    }
 
   await fetch("/api/sheet", {
