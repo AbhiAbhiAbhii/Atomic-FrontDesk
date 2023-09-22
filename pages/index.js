@@ -26,7 +26,6 @@ export default function FrontDesk(){
   const [ meeting, setMeeting ] = useState('')
   const [ interview, setInterview ] = useState('')
 
-  const [ thanks, setThanks ] = useState(false)
 
 
   // Focus and Blur states
@@ -142,10 +141,19 @@ export default function FrontDesk(){
       interview
     }
 
+    const phoneRegex = /^\d{10}$/;
+    const nameRegex = /^[a-zA-Z ]+$/;
+
+
    if(!fullName || !number) {
     formError()
     console.log("error")
-   } else {
+   } else if(!phoneRegex.test(number)) {
+    window.alert("Please enter a 10 digit number")
+   } else if(!nameRegex.test(fullName)){
+      window.alert("Enter a valid name")
+   }
+   else  {
     formSuccess()
     console.log("SUCCESS")
 
@@ -157,37 +165,6 @@ export default function FrontDesk(){
       window.alert("Your Form has been Submitted")
     }, 3000)
 
-    setTimeout(() => {
-      setThanks(true)
-    }, 5000)
-
-    if(thanks === true) {
-      return(
-        <main className="main">
-        <div className="main-text-holder"> 
-          <div onClick={() => window.location.href="/"} className="main-logo">
-            <Image src={'/ATOMIC_logo.svg'} alt="THE ATOMIC" height={100} width={200} />
-          </div>
-          <div className="main-sub-text">
-            <p className="c-f">
-              {SubText}
-            </p>
-          </div>
-        </div>
-      
-        {/* Boolean */}
-          <div className="form-A-wrapper">
-            <form className="form-A">
-              <div className="form-A-title">
-                <p className="inter">
-                  {TitleA}
-                </p>
-              </div>
-            </form>
-         </div>
-        </main>
-      )
-    }
 
     console.log(data,"OUR DATA")
 
