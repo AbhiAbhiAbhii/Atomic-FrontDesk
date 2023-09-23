@@ -166,7 +166,7 @@ export default function FrontDesk(){
      })
 
     setTimeout(() => {
-      router.push('/thankyou')
+      router.reload()
     }, 6000)
 
     setTimeout(() => {
@@ -174,7 +174,6 @@ export default function FrontDesk(){
     }, 3000)
 
 
-    console.log(data,"OUR DATA")
 
     setFullName('')
     setNumber('')
