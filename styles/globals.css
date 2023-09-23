@@ -94,17 +94,17 @@ a {
 .form-A-opt {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 .form-A-opt-item {
-  width: 50%;
+  width: 30%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .first-data {
   font-size: 1.25em;
-  padding: 0.5em 2em;
+  padding: 0.5em 3.2em;
   border-radius: 20em;
   transition: all 0.3s ease;
   cursor: pointer;
@@ -302,9 +302,18 @@ select {
   }
 
   .form-btn {
-    position: fixed;
+    /* position: fixed;
     bottom: 10%;
     left: 50%;
-    transform: translate(-50%, 0);
+    transform: translate(-50%, 0); */
+  }
+}
+
+@media(max-width: 580px) {
+  .form-A-opt {
+    flex-direction: column;
+  }
+  .form-A-opt-item  {
+    margin-bottom: 3em;
   }
 }
