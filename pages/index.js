@@ -122,7 +122,7 @@ export default function FrontDesk(){
 
   // Handle Submit
 
-  const disabled = fullName === "" || number === ""; // Disable Submit Btn Condition
+  const disabled = fullName === "" || number === "" || location === "" || company === "" || mail === "" || id === "" || purpose === "" ; // Disable Submit Btn Condition
 
   const handleSubmit = async (e) => { // Handle Submit
     e.preventDefault()
@@ -171,7 +171,7 @@ export default function FrontDesk(){
 
     // setTimeout(() => {
     //   window.alert("Your Form has been Submitted")
-    // }, 3000)
+    // }, 3000)w
 
 
 
@@ -359,9 +359,9 @@ export default function FrontDesk(){
             {/* Email */}
             <div className="form-input-wrapper">
               <label>
-                Email Address
+                Email Address *
               </label>
-              <input type="email" placeholder="Email" id="mail" 
+              <input type="email" placeholder="Elon@tesla.com" id="mail" 
               className= {mailFocus ? 'focused':'notFocused'} 
               onBlur={handleMailBlur}
               onFocus={handleMailFocus}
@@ -371,9 +371,9 @@ export default function FrontDesk(){
             {/* Company */}
             <div className="form-input-wrapper">
               <label>
-                Company
+                Company *
               </label>
-              <input type="text" placeholder="Company Name" id="company" 
+              <input type="text" placeholder="Acme Corp" id="company" 
               className= {companyFocus ? 'focused':'notFocused'} 
               onBlur={handleCompanyBlur}
               onFocus={handleCompanyFocus}
@@ -383,9 +383,9 @@ export default function FrontDesk(){
             {/* ??? */}
             <div className="form-input-wrapper">
               <label>
-                You are a 
+                You are a *
               </label>
-              <input type="text" placeholder="Input" id="" 
+              <input type="text" placeholder="Designer? Developer?" id="" 
               className= {idFocus ? 'focused':'notFocused'} 
               onBlur={handleIdBlur}
               onFocus={handleIdFocus}
@@ -395,9 +395,9 @@ export default function FrontDesk(){
             {/* Location */}
             <div className="form-input-wrapper">
               <label>
-                Location
+                Based out of?
               </label>
-              <input type="text" placeholder="Trivandrum..." id="location" 
+              <input type="text" placeholder="Your Location" id="location" 
               className= {locationFocus ? 'focused':'notFocused'} 
               onBlur={handleLocationBlur}
               onFocus={handleLocationFocus}
