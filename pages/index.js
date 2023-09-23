@@ -169,9 +169,9 @@ export default function FrontDesk(){
       router.reload()
     }, 6000)
 
-    setTimeout(() => {
-      window.alert("Your Form has been Submitted")
-    }, 3000)
+    // setTimeout(() => {
+    //   window.alert("Your Form has been Submitted")
+    // }, 3000)
 
 
 
