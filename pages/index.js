@@ -120,12 +120,22 @@ export default function FrontDesk(){
     setInterviewFocused(false)
   }
 
-  // Handle Submit
 
   const disabled = fullName === "" || number === "" || location === "" || company === "" || mail === "" || id === "" || purpose === "" ; // Disable Submit Btn Condition
 
   const handleSubmit = async (e) => { // Handle Submit
     e.preventDefault()
+
+    const date = new Date()
+
+    let day = date.getDate()
+    let month = date.getMonth() + 1
+    let year = date.getFullYear()
+    let min = date.getMinutes()
+    let hr = date.getHours()
+
+    let dateData = `${day}/${month}/${year}  ${hr}:${min}`
+
 
     const data = {
       firstData,
@@ -138,7 +148,8 @@ export default function FrontDesk(){
       purpose, 
       event,
       meeting,
-      interview
+      interview,
+      dateData
     }
 
     const phoneRegex = /^\d{10}$/;
@@ -168,10 +179,6 @@ export default function FrontDesk(){
     setTimeout(() => {
       router.reload()
     }, 3000)
-
-    // setTimeout(() => {
-    //   window.alert("Your Form has been Submitted")
-    // }, 3000)w
 
 
 
