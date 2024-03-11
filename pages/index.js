@@ -401,7 +401,7 @@ export default function FrontDesk(){
             {/* Location */}
             <div className="form-input-wrapper">
               <label>
-                Based out of?
+                Based out of? *
               </label>
               <input type="text" placeholder="Your Location" id="location" 
               className= {locationFocus ? 'focused':'notFocused'} 
