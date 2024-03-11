@@ -121,7 +121,7 @@ export default function FrontDesk(){
   }
 
 
-  const disabled = fullName === "" || number === "" || location === "" || company === "" || mail === "" || id === "" || purpose === "" ; // Disable Submit Btn Condition
+  const disabled = fullName === "" || number === "" || location === "" || id === "" || purpose === "" ; // Disable Submit Btn Condition
 
   const handleSubmit = async (e) => { // Handle Submit
     e.preventDefault()
@@ -135,7 +135,6 @@ export default function FrontDesk(){
     let hr = date.getHours()
 
     let dateData = `${day}/${month}/${year}  ${hr}:${min}`
-
 
     const data = {
       firstData,
@@ -366,7 +365,7 @@ export default function FrontDesk(){
             {/* Email */}
             <div className="form-input-wrapper">
               <label>
-                Email Address *
+                Email Address
               </label>
               <input type="email" placeholder="Elon@tesla.com" id="mail" 
               className= {mailFocus ? 'focused':'notFocused'} 
@@ -378,7 +377,7 @@ export default function FrontDesk(){
             {/* Company */}
             <div className="form-input-wrapper">
               <label>
-                Company *
+                Company 
               </label>
               <input type="text" placeholder="Acme Corp" id="company" 
               className= {companyFocus ? 'focused':'notFocused'} 
