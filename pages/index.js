@@ -121,7 +121,7 @@ export default function FrontDesk(){
   }
 
 
-  const disabled = fullName === "" || number === "" || location === "" || id === "" || purpose === "" ; // Disable Submit Btn Condition
+  const disabled = fullName === "" || number === "" || purpose === "" ; // Disable Submit Btn Condition
 
   const handleSubmit = async (e) => { // Handle Submit
     e.preventDefault()
@@ -375,7 +375,7 @@ export default function FrontDesk(){
               onChange={(e) => setMail(e.target.value)}  />
             </div>
             {/* Company */}
-            <div className="form-input-wrapper">
+            {/* <div className="form-input-wrapper">
               <label>
                 Company 
               </label>
@@ -385,9 +385,9 @@ export default function FrontDesk(){
               onFocus={handleCompanyFocus}
               value={company} 
               onChange={(e) => setCompany(e.target.value)} />
-            </div>
+            </div> */}
             {/* ??? */}
-            <div className="form-input-wrapper">
+            {/* <div className="form-input-wrapper">
               <label>
                 You are a *
               </label>
@@ -397,9 +397,9 @@ export default function FrontDesk(){
               onFocus={handleIdFocus}
               value={id} 
               onChange={(e) => setId(e.target.value)} />
-            </div>
+            </div> */}
             {/* Location */}
-            <div className="form-input-wrapper">
+            {/* <div className="form-input-wrapper">
               <label>
                 Based out of? *
               </label>
@@ -409,7 +409,7 @@ export default function FrontDesk(){
               onFocus={handleLocationFocus}
               value={location} 
               onChange={(e) => setLocation(e.target.value)} />
-            </div>
+            </div> */}
             {/* Purpose of visit */}
             <div className="form-input-wrapper">
               <label>
